@@ -57,7 +57,7 @@ Generador de contraseñas seguras:
 - bash
 - Copiar
 - Editar
-- git clone https://github.com/usuario/ValidadorContraseña.git
+- git clone https://github.com/usuario/password-validator.git
 - cd password-validator
   
   Instalar dependencias
@@ -78,6 +78,7 @@ Generador de contraseñas seguras:
 - Editar
 - http://localhost:3000
 # 📸 Vista previa
+<img width="953" height="583" alt="image" src="https://github.com/user-attachments/assets/c6356033-c05e-4894-83bc-1c55ba9fc52d" />
 
 
 🛡️ Consejos de seguridad
