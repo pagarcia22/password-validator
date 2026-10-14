@@ -1,91 +1,41 @@
-# 🔐 Generador y validador de Contraseñas
+# Validador y Generador de Contraseñas
 
-Aplicación interactiva en React + TypeScript para evaluar la seguridad de contraseñas en tiempo real y generar contraseñas seguras de manera automática.
-Incluye validaciones, sugerencias de mejora y un generador que garantiza alta entropía.
+Aplicación web hecha con Next.js, React y TypeScript que evalúa la fortaleza de una contraseña en tiempo real y genera contraseñas aleatorias de 16 caracteres.
 
-# 🚀 Características
-Validación en tiempo real de la fortaleza de la contraseña.
+## Funcionalidades
 
-Evaluación basada en:
+- **Validación en tiempo real** con puntuación de 0 a 6 según:
+  - Longitud (8 o más caracteres suma 1 punto; 12 o más suma 2).
+  - Letras mayúsculas.
+  - Letras minúsculas.
+  - Números.
+  - Símbolos especiales.
+- Nivel de seguridad con etiqueta y color: muy débil, débil, moderada, fuerte, muy fuerte.
+- **Generador** de contraseñas de 16 caracteres con al menos una minúscula, una mayúscula, un número y un símbolo.
+- Botón para **copiar al portapapeles** con confirmación visual.
+- Diseño responsivo.
 
-- Longitud mínima y óptima.
+## Tecnologías
 
-- Inclusión de mayúsculas, minúsculas, números y símbolos especiales.
+Next.js · React · TypeScript · Tailwind CSS · shadcn/ui · Lucide React
 
-- Detección de patrones comunes o inseguros.
+## Instalación
 
-- Sistema de puntuación (0-6) con etiquetas y colores para cada nivel:
+```bash
+git clone https://github.com/pagarcia22/password-validator.git
+cd password-validator
+npm install
+npm run dev
+```
 
-- Muy débil, Débil, Moderada, Fuerte, Muy fuerte.
+Abre `http://localhost:3000` en el navegador.
 
-Generador de contraseñas seguras:
+## Notas de seguridad
 
-- Longitud fija de 16 caracteres.
+La contraseña se evalúa en tu navegador y no se envía a ningún servidor.
 
-- Incluye letras mayúsculas y minúsculas, números y símbolos.
+## Mejoras pendientes
 
-- Sin patrones predecibles.
-
-- Función de copiado al portapapeles con confirmación visual.
-
-- Diseño responsivo con TailwindCSS y componentes shadcn/ui.
-
-# 🛠️ Tecnologías utilizadas
-- React (con hooks useState y useEffect)
-
-- TypeScript
-
-- TailwindCSS
-
-- shadcn/ui (Button, Input, Card, Badge, etc.)
-
-- Lucide-react (Iconos SVG)
-
-- API de Clipboard de JavaScript
-
-# 📂 Estructura del componente principal
-- Validación de contraseñas → validatePassword(pwd: string)
-
-- Generación de contraseñas seguras → generateSecurePassword()
-
-- Copia al portapapeles → copyToClipboard(text: string)
-
-- Interfaz PasswordStrength para tipar resultados de validación.
-
-# 📦 Instalación y uso
-- Clonar el repositorio
-- bash
-- Copiar
-- Editar
-- git clone https://github.com/usuario/password-validator.git
-- cd password-validator
-  
-  Instalar dependencias
-- bash
-- Copiar
-- Editar
-- npm install
- 
-  Iniciar el servidor de desarrollo
-- bash
-- Copiar
-- Editar
-- npm run dev
-- Abrir en el navegador
-  
-  arduino
-- Copiar
-- Editar
-- http://localhost:3000
-# 📸 Vista previa
-<img width="953" height="583" alt="image" src="https://github.com/user-attachments/assets/c6356033-c05e-4894-83bc-1c55ba9fc52d" />
-
-
-🛡️ Consejos de seguridad
- - No reutilices contraseñas.
-
- - Usa un gestor de contraseñas.
-
- - Activa autenticación en dos pasos (2FA).
-
-- Cambia contraseñas comprometidas.
+- Usar `crypto.getRandomValues()` en el generador en lugar de `Math.random()`, que no es criptográficamente seguro.
+- Detectar patrones comunes (por ejemplo `123456` o `password`) y caracteres repetidos.
+- Agregar pruebas para las funciones de validación y generación.
